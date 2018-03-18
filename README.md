@@ -8,9 +8,15 @@ The produced data of this topic will be used in the future examples using Kafka 
 
 1. **Open up IntelliJ**
 
+1. **Select _KafkaTechBier_JavaProducer_ to open it up**
+
+1. **In the toolbar -> VCS -> Git -> Pull -> press Pull**
+
+1. **Click _Maven Projects_ (which is located on the right) -> Lifecycle -> Run/doubleclick _compile_**
+
 1. **Check the code and try to understand what is been coded**
 
-1. **Build the code and press run**
+1. **Run the code: In the toolbar -> Run -> Run**
 
 1. **Use either the Kafka UI or the consumer console to see that data has been produced**
 

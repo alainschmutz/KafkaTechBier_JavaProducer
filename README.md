@@ -12,6 +12,8 @@ The produced data of this topic will be used in the future examples using Kafka 
 
 1. Select _KafkaTechBier_JavaProducer_ to open it up
 
+1. In the right bottom corner in IntelliJ -> Click _Git: xxx_ -> _Local Branch_ -> _master_ -> _Checkout_
+
 1. In the toolbar -> _VCS_ -> _Git_ -> _Pull_ -> press _Pull_
 
 1. Click _Maven Projects_ (which is located on the right) -> Lifecycle -> Run/doubleclick _compile_

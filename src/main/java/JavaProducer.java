@@ -1,3 +1,5 @@
+import ch.ipt.techbier.kafkastreams.Expense;
+import io.confluent.kafka.serializers.KafkaAvroSerializer;
 import org.apache.kafka.clients.producer.Producer;
 import org.apache.kafka.clients.producer.ProducerRecord;
 import org.apache.kafka.common.serialization.StringSerializer;
@@ -23,7 +25,7 @@ public class JavaProducer {
         int maxexpensevalue = 1000;
 
         // Topic to produce to
-        String topic = "ipt-spesen";
+        String topic = "iptspesenavro6";
 
         // Time to sleep in ms
         int timetosleep = 5000;
@@ -33,14 +35,15 @@ public class JavaProducer {
 
         // kafka bootstrap server
         properties.setProperty("bootstrap.servers", "127.0.0.1:9092");
+        properties.setProperty("schema.registry.url", "http://127.0.0.1:8081");
         properties.setProperty("key.serializer", StringSerializer.class.getName());
-        properties.setProperty("value.serializer", StringSerializer.class.getName());
+        properties.setProperty("value.serializer", KafkaAvroSerializer.class.getName());
         // producer acks
         properties.setProperty("acks", "1");
         properties.setProperty("retries", "3");
         properties.setProperty("linger.ms", "1");
 
-        Producer<String, String> producer = new org.apache.kafka.clients.producer.KafkaProducer<String, String>(properties);
+        Producer<String, Expense> producer = new org.apache.kafka.clients.producer.KafkaProducer<>(properties);
 
         // Fill ArrayLists with values
         Collections.addAll(employees, "RKO","DAL","PGR","DAL","SHU","TIN","LKE","TSC","ASH","FHE");
@@ -48,20 +51,20 @@ public class JavaProducer {
 
         // Do every x milliseconds
         while (true){
-            ProducerRecord<String, String> producerRecord =
-                    new ProducerRecord<String, String>(
+            ProducerRecord<String, Expense> producerRecord =
+                    new ProducerRecord<>(
                             topic,
                             null,
                             null,
 
-                            // pick random employee
-                            employees.get(random_employee.nextInt(employees.size())) + " , "
-
+                            Expense.newBuilder()
+                                    // pick random employee
+                                    .setEmployeeAcronym(employees.get(random_employee.nextInt(employees.size())))
                                     // pick random description
-                                    + description.get(random_employee.nextInt(description.size())) + " , "
-
+                                    .setDescription(description.get(random_employee.nextInt(description.size())))
                                     // generate random number
-                                    + (int)(Math.random() * maxexpensevalue * 100));
+                                    .setAmount((int)(Math.random() * maxexpensevalue * 100))
+                                    .build());
 
             producer.send(producerRecord);
             Thread.sleep(timetosleep);

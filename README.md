@@ -6,21 +6,23 @@ It should simulate the "expenses-flow" within ipt. For this it will randomly cho
 
 The produced data of this topic will be used in the future examples using Kafka Streams and Kafka Connect.
 
-1. **Open up IntelliJ**
+## How to
 
-1. **Select _KafkaTechBier_JavaProducer_ to open it up**
+1. Open up IntelliJ
 
-1. **In the toolbar -> VCS -> Git -> Pull -> press Pull**
+1. Select _KafkaTechBier_JavaProducer_ to open it up
 
-1. **Click _Maven Projects_ (which is located on the right) -> Lifecycle -> Run/doubleclick _compile_**
+1. In the toolbar -> VCS -> Git -> Pull -> press Pull
 
-1. **Check the code and try to understand what is been coded**
+1. Click _Maven Projects_ (which is located on the right) -> Lifecycle -> Run/doubleclick _compile_
 
-1. **Run the code: In the toolbar -> Run -> Run**
+1. Check the code and try to understand what is been coded
 
-1. **Use either the Kafka UI or the consumer console to see that data has been produced**
+1. Run the code: In the toolbar -> Run -> Run
 
-1. **... be happy that you've just created the first Java Kafka Producer :-)**
+1. Use either the Kafka UI or the consumer console to see that data has been produced
+
+1. ... be happy that you've just created the first Java Kafka Producer :-)
 
 # Exercise 4
 

@@ -112,3 +112,8 @@ Schema Evolution. We noticed that a currency field is missing from the Expense o
 
 6. Run JavaProducer and watch it succeed. Results as usual can be seen using kafka-avro-console-consumer.
 
+# Next exercise
+
+Kafka Streams: https://github.com/fabiohecht/techbierkafkastreamsexercise
+
+

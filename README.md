@@ -90,6 +90,14 @@ We will change the producer to produce Avro instead of String.
     
 Final solution is in branch "avro".
 
+1. In the right bottom corner in IntelliJ -> Click _Git: master_ -> _Local Branch_ -> _avro_ -> _Checkout_
+
+1. In the toolbar -> _VCS_ -> _Git_ -> _Pull_ -> press _Pull_
+
+1. Click _Maven Projects_ (which is located on the right) -> Lifecycle -> Run/doubleclick _compile_
+
+1. Run the code: In the toolbar -> _Run_ -> _Run_
+
 # Exercise 5
 
 Schema Evolution. We noticed that a currency field is missing from the Expense object. How stupid of us. But hey, with Avro it's easy to make a change while keeping old clients compatible.

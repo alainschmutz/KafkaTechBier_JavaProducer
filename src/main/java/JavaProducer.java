@@ -25,7 +25,7 @@ public class JavaProducer {
         int maxexpensevalue = 1000;
 
         // Topic to produce to
-        String topic = "iptspesenavro6";
+        String topic = "ipt-spesen-avro";
 
         // Time to sleep in ms
         int timetosleep = 5000;

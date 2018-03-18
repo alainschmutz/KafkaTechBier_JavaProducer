@@ -19,12 +19,6 @@
       "name": "amount",
       "doc": "How much it costed (without comma, e.g. in cents, Rappen, etc.).",
       "type": "int"
-    },
-    {
-      "name": "currency",
-      "doc": "Three-letter (ISO 4217) code.",
-      "type": "string",
-      "default": "CHF"
     }
   ]
 }

@@ -61,6 +61,8 @@ We will change the producer to produce Avro instead of String.
 4. Run mvn compile (in IntelliJ in the Maven Projects tool button: Producer, Lifecycle, compile). This will generate code for the data model under target/generated-sources. 
 
 5. The following changes are to be made in the JavaProducer.java.
+   * Change the name of the topic we will produce into to ipt-spesen-avro. 
+
    * Add the schema registry URL which is where Avro schemas are stored: 
 
           properties.setProperty("schema.registry.url", "http://127.0.0.1:8081");
@@ -77,9 +79,8 @@ We will change the producer to produce Avro instead of String.
        kafka-avro-console-consumer --bootstrap-server localhost:9092 --topic ipt-spesen-avro --from-beginning
     
 Final solution is in branch "avro".
- 
 
-# Exercise 6
+# Exercise 5
 
 Schema Evolution. We noticed that a currency field is missing from the Expense object. How stupid of us. But hey, with Avro it's easy to make a change while keeping old clients compatible.
 
